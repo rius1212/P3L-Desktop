@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB645578-1BCA-48A6-B80A-A6565C10B07D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AtmaAuto</RootNamespace>
+    <AssemblyName>AtmaAuto</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\MySql.Data\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AtmaAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtmaAuto.Designer.cs">
+      <DependentUpon>AtmaAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CabangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CabangForm.Designer.cs">
+      <DependentUpon>CabangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CekRiwayat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CekRiwayat.Designer.cs">
+      <DependentUpon>CekRiwayat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CekTransaksi02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CekTransaksi02.Designer.cs">
+      <DependentUpon>CekTransaksi02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeStatusForm.Designer.cs">
+      <DependentUpon>ChangeStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassAA\Jasa.cs" />
+    <Compile Include="ClassAA\LoginAA.cs" />
+    <Compile Include="ClassAA\LoginDAL.cs" />
+    <Compile Include="ClassAA\User.cs" />
+    <Compile Include="CrystalReportForSPK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalReportForSPK.Designer.cs">
+      <DependentUpon>CrystalReportForSPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportPenBulanan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPenBulanan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportPengeluaran.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPengeluaran.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportPenJasa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPenJasa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportPenTahunan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPenTahunan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSisaStok.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSisaStok.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportSPK.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportSPK.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportStruk.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportStruk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetSp.cs">
+      <DependentUpon>DataSetSp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JasaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JasaForm.Designer.cs">
+      <DependentUpon>JasaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KelolaSparepart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KelolaSparepart.Designer.cs">
+      <DependentUpon>KelolaSparepart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KelolaSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KelolaSupplier.Designer.cs">
+      <DependentUpon>KelolaSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonfirmasiSp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonfirmasiSp.Designer.cs">
+      <DependentUpon>KonfirmasiSp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KonfirmasiSpOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KonfirmasiSpOK.Designer.cs">
+      <DependentUpon>KonfirmasiSpOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaporanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaporanForm.Designer.cs">
+      <DependentUpon>LaporanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySqlAdapter.cs" />
+    <Compile Include="pef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pef.Designer.cs">
+      <DependentUpon>pef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassAA\Pegawai.cs" />
+    <Compile Include="PembayaranForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PembayaranForm.Designer.cs">
+      <DependentUpon>PembayaranForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendapatanBln.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendapatanBln.Designer.cs">
+      <DependentUpon>PendapatanBln.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendapatanTahunForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendapatanTahunForm.Designer.cs">
+      <DependentUpon>PendapatanTahunForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengeluaranForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PengeluaranForm.Designer.cs">
+      <DependentUpon>PengeluaranForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PenJasaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PenJasaForm.Designer.cs">
+      <DependentUpon>PenJasaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SisaStokForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SisaStokForm.Designer.cs">
+      <DependentUpon>SisaStokForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparepartTerlaris.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SparepartTerlaris.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SpTerlaris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpTerlaris.Designer.cs">
+      <DependentUpon>SpTerlaris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Struk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Struk.Designer.cs">
+      <DependentUpon>Struk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Struk02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Struk02.Designer.cs">
+      <DependentUpon>Struk02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaksiCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaksiCheck.Designer.cs">
+      <DependentUpon>TransaksiCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaksiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaksiForm.Designer.cs">
+      <DependentUpon>TransaksiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="transaksiFormJs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="transaksiFormJs.Designer.cs">
+      <DependentUpon>transaksiFormJs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaksiJs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaksiJs.Designer.cs">
+      <DependentUpon>TransaksiJs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransaksiLanjutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransaksiLanjutForm.Designer.cs">
+      <DependentUpon>TransaksiLanjutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="transaksiSp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="transaksiSp.Designer.cs">
+      <DependentUpon>transaksiSp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeLoad.Designer.cs">
+      <DependentUpon>WelcomeLoad.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtmaAuto.resx">
+      <DependentUpon>AtmaAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CabangForm.resx">
+      <DependentUpon>CabangForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CekRiwayat.resx">
+      <DependentUpon>CekRiwayat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CekTransaksi02.resx">
+      <DependentUpon>CekTransaksi02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeStatusForm.resx">
+      <DependentUpon>ChangeStatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportForSPK.resx">
+      <DependentUpon>CrystalReportForSPK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportPenBulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPenBulanan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportPengeluaran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPengeluaran.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportPenJasa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPenJasa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportPenTahunan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPenTahunan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSisaStok.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSisaStok.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportSPK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportSPK.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportStruk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportStruk.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JasaForm.resx">
+      <DependentUpon>JasaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KelolaSparepart.resx">
+      <DependentUpon>KelolaSparepart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KelolaSupplier.resx">
+      <DependentUpon>KelolaSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonfirmasiSp.resx">
+      <DependentUpon>KonfirmasiSp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonfirmasiSpOK.resx">
+      <DependentUpon>KonfirmasiSpOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaporanForm.resx">
+      <DependentUpon>LaporanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pef.resx">
+      <DependentUpon>pef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PembayaranForm.resx">
+      <DependentUpon>PembayaranForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendapatanBln.resx">
+      <DependentUpon>PendapatanBln.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendapatanTahunForm.resx">
+      <DependentUpon>PendapatanTahunForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengeluaranForm.resx">
+      <DependentUpon>PengeluaranForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PenJasaForm.resx">
+      <DependentUpon>PenJasaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SisaStokForm.resx">
+      <DependentUpon>SisaStokForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparepartTerlaris.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SparepartTerlaris.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpTerlaris.resx">
+      <DependentUpon>SpTerlaris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Struk.resx">
+      <DependentUpon>Struk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Struk02.resx">
+      <DependentUpon>Struk02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaksiCheck.resx">
+      <DependentUpon>TransaksiCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaksiForm.resx">
+      <DependentUpon>TransaksiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="transaksiFormJs.resx">
+      <DependentUpon>transaksiFormJs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaksiJs.resx">
+      <DependentUpon>TransaksiJs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransaksiLanjutForm.resx">
+      <DependentUpon>TransaksiLanjutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="transaksiSp.resx">
+      <DependentUpon>transaksiSp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeLoad.resx">
+      <DependentUpon>WelcomeLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSetSp.xsc">
+      <DependentUpon>DataSetSp.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSp.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSp.xss">
+      <DependentUpon>DataSetSp.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-window-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laporan-icon-png-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LinkedIn_UI-15-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ddd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_png_965423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ww.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEGAWAI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TRANS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CABABG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOG OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accessori-ricambi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\service-icon-png-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-list-flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON_CMC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-spare-parts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bengkel-Motor.01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-icon-png-transparent-7 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-list-flat1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
